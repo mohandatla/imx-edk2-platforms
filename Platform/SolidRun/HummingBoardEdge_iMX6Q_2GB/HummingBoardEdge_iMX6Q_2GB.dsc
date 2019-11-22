@@ -53,9 +53,9 @@
 [Components.common]
   # Display Support
 !if $(CONFIG_HEADLESS) == FALSE
-  MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
-  MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
-  MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
+  #MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
+  #MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
+  #MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
   !if $(IMX_FAMILY) == IMX6SX
     #
     # Use board-specific GOP for SoloX
@@ -72,8 +72,22 @@
   $(BOARD_DIR)/AcpiTables/AcpiTables.inf
 
   # SMBIOS Support
-  Silicon/NXP/iMX6Pkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe.inf
-  MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf
+  #Silicon/NXP/iMX6Pkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe.inf
+  #MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf
+
+
+  #
+  # FPDT
+  #
+  #Enable ReportStatusCodeRouterRuntimeDxe & FirmwarePerformanceDxe for UEFI Performance
+  ##perfMdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf
+  ##perfMdeModulePkg/Universal/Acpi/FirmwarePerformanceDataTableDxe/FirmwarePerformanceDxe.inf {
+  ##perf  <LibraryClasses>
+  ##perf    LockBoxLib|MdeModulePkg/Library/LockBoxNullLib/LockBoxNullLib.inf
+  ##perf}
+  
+  #Enable DpApp to visualize UEFI Performance
+  ##perfShellPkg/DynamicCommand/DpDynamicCommand/DpApp.inf
 
 ################################################################################
 #

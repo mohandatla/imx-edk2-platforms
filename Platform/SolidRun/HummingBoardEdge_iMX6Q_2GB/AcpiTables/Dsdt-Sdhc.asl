@@ -42,6 +42,7 @@ Device (SDH2)
     // Despite the SDCard is a removal device, UWF requires the
     // boot device to be non-removable. This is required for the
     // Windows SDCard boot scenario with UWF enabled.
+    // Temporary workaround to make DISM antitheft policy happy.
     Method (_RMV) {
       Return (0)
     }
@@ -75,7 +76,8 @@ Device (SDH3)
 
     // eMMC is non-removable
     Method (_RMV) {
-      Return (0)
+      // Temporary workaround to make DISM antitheft policy happy.
+      Return (1)
     }
   }
 }

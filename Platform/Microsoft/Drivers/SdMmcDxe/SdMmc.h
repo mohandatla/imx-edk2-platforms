@@ -17,10 +17,12 @@
 #define __SDMMC_H__
 
 // Define with non-zero to collect IO statistics and dump it to the terminal.
+// #define SDMMC_COLLECT_STATISTICS  1
 #define SDMMC_COLLECT_STATISTICS  0
 
 // Define with non-zero to benchmark IO on the first MmcReadBlocks call and
 // dump to the terminal.
+// #define SDMMC_BENCHMARK_IO        1
 #define SDMMC_BENCHMARK_IO        0
 
 // Lower bound of 2s poll wait time (200 x 10ms)
@@ -138,7 +140,7 @@ typedef struct {
   CONST SD_COMMAND              *PreLastSuccessfulCmd;
   CONST SD_COMMAND              *LastSuccessfulCmd;
   UINT32                        ErrorRecoveryAttemptCount;
-#ifdef MMC_COLLECT_STATISTICS
+#ifdef SDMMC_COLLECT_STATISTICS
   IoReadStatsEntry              IoReadStats[1024];
   UINT32                        IoReadStatsNumEntries;
 #endif // COLLECT_IO_STATISTICS

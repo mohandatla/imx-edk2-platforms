@@ -51,19 +51,19 @@
   #
   # Dynamic Smbios Override
   #
-  INF Silicon/NXP/iMXPlatformPkg/Drivers/SmbiosConfigDxe/SmbiosConfigDxe.inf
+  #INF Silicon/NXP/iMXPlatformPkg/Drivers/SmbiosConfigDxe/SmbiosConfigDxe.inf
 
   #
   # USB Stack
   #
 !if $(CONFIG_USB) == TRUE
-  INF Silicon/NXP/iMX6Pkg/Drivers/PciEmulation/PciEmulation.inf
-  INF MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe.inf
-  INF MdeModulePkg/Bus/Pci/EhciDxe/EhciDxe.inf
-  INF MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBusDxe.inf
-  INF MdeModulePkg/Bus/Usb/UsbMassStorageDxe/UsbMassStorageDxe.inf
-  INF MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe.inf
-  INF MdeModulePkg/Bus/Usb/UsbMouseDxe/UsbMouseDxe.inf
+  #INF Silicon/NXP/iMX6Pkg/Drivers/PciEmulation/PciEmulation.inf
+  #INF MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe.inf
+  #INF MdeModulePkg/Bus/Pci/EhciDxe/EhciDxe.inf
+  #INF MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBusDxe.inf
+  #INF MdeModulePkg/Bus/Usb/UsbMassStorageDxe/UsbMassStorageDxe.inf
+  #INF MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe.inf
+  #INF MdeModulePkg/Bus/Usb/UsbMouseDxe/UsbMouseDxe.inf
 !endif
 
 !if $(CONFIG_PCIE) == TRUE
@@ -76,7 +76,7 @@
   #
   # Bds
   #
-  INF MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
+  #INF MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
   INF MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
   INF MdeModulePkg/Universal/SetupBrowserDxe/SetupBrowserDxe.inf
   INF MdeModulePkg/Universal/DisplayEngineDxe/DisplayEngineDxe.inf

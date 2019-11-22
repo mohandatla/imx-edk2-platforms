@@ -385,7 +385,10 @@ BlockIoReadBlocks (
 
   NumBlocks = BufferSize / This->Media->BlockSize;
   HostInst = SDHC_INSTANCE_FROM_BLOCK_IO_THIS (This);
+  //TODO Bug fix to get build out for collecting SD bench mark statastics.
+  #define ARRAYSIZE(_Array) (sizeof(_Array) / sizeof(_Array[0]))
   CONST UINT32 TableSize = ARRAYSIZE (HostInst->IoReadStats);
+  #undef ARRAYSIZE
   IoReadStatsEntry *CurrentReadEntry = NULL;
 
   for (BlockIdx = 0; BlockIdx < TableSize; ++BlockIdx) {

@@ -496,8 +496,8 @@
   #
   gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel| 0x80000047
 !endif
-  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x07
-  gEfiMdePkgTokenSpaceGuid.PcdPlatformBootTimeOut|3
+  gEfiMdePkgTokenSpaceGuid.PcdReportStatusCodePropertyMask|0x01
+  gEfiMdePkgTokenSpaceGuid.PcdPlatformBootTimeOut|0
 
 ########################
 #
@@ -947,31 +947,31 @@
   #
   # Dynamic Smbios Override
   #
-  Silicon/NXP/iMXPlatformPkg/Drivers/SmbiosConfigDxe/SmbiosConfigDxe.inf
+  #Silicon/NXP/iMXPlatformPkg/Drivers/SmbiosConfigDxe/SmbiosConfigDxe.inf
 
   #
   # USB Stack
   #
 !if $(CONFIG_USB) == TRUE
-  Silicon/NXP/iMX6Pkg/Drivers/PciEmulation/PciEmulation.inf
-  MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe.inf
-  MdeModulePkg/Bus/Pci/EhciDxe/EhciDxe.inf
-  MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBusDxe.inf
-  MdeModulePkg/Bus/Usb/UsbMassStorageDxe/UsbMassStorageDxe.inf
-  MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe.inf
-  MdeModulePkg/Bus/Usb/UsbMouseDxe/UsbMouseDxe.inf
+  #Silicon/NXP/iMX6Pkg/Drivers/PciEmulation/PciEmulation.inf
+  #MdeModulePkg/Bus/Pci/NonDiscoverablePciDeviceDxe/NonDiscoverablePciDeviceDxe.inf
+  #MdeModulePkg/Bus/Pci/EhciDxe/EhciDxe.inf
+  #MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBusDxe.inf
+  #MdeModulePkg/Bus/Usb/UsbMassStorageDxe/UsbMassStorageDxe.inf
+  #MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe.inf
+  #MdeModulePkg/Bus/Usb/UsbMouseDxe/UsbMouseDxe.inf
 !endif
 
 !if $(CONFIG_PCIE) == TRUE
   # PCIe support
-  Silicon/NXP/iMX6Pkg/Drivers/PciExpress/iMX6PciExpress.inf
+  #Silicon/NXP/iMX6Pkg/Drivers/PciExpress/iMX6PciExpress.inf
 !endif
 
   #
   # Generic Bds (Not Intel's)
   #
   MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
-  MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
+  #MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
   MdeModulePkg/Universal/DisplayEngineDxe/DisplayEngineDxe.inf
   MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
   MdeModulePkg/Universal/SetupBrowserDxe/SetupBrowserDxe.inf
@@ -985,7 +985,7 @@
   # Shell
   #
   ShellPkg/Application/Shell/Shell.inf {
-    <LibraryClasses>
+  <LibraryClasses>
       ShellCommandLib|ShellPkg/Library/UefiShellCommandLib/UefiShellCommandLib.inf
       BcfgCommandLib|ShellPkg/Library/UefiShellBcfgCommandLib/UefiShellBcfgCommandLib.inf
       HandleParsingLib|ShellPkg/Library/UefiHandleParsingLib/UefiHandleParsingLib.inf

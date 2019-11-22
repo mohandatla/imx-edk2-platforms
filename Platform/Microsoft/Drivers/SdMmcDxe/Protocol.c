@@ -251,12 +251,15 @@ InitializeMmcDevice (
     return Status;
   }
 
+  // Temporary workaround to make DISM antitheft policy happy.
+  /*
   Status = SdhcSwitchSpeedModeMmc (HostInst);
   if (EFI_ERROR (Status)) {
     LOG_ERROR ("SdhcSwitchSpeedModeMmc() failed. %r", Status);
     return Status;
   }
-
+  */
+ 
   Status = SdhcSwitchBusWidthMmc (HostInst);
   if (EFI_ERROR (Status)) {
     LOG_ERROR ("SdhcSwitchBusWidthMmc() failed. %r", Status);

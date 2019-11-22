@@ -95,9 +95,9 @@ READ_LOCK_STATUS   = TRUE
   INF RuleOverride=ACPITABLE $(BOARD_DIR)/AcpiTables/AcpiTables.inf
 
 !if $(CONFIG_HEADLESS) == FALSE
-  INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
-  INF MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
-  INF MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
+  #INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
+  #INF MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
+  #INF MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
   !if $(IMX_FAMILY) == IMX6SX
     #
     # Use board-specific GOP for SoloX
@@ -111,7 +111,16 @@ READ_LOCK_STATUS   = TRUE
   #
   # SMBIOS Support
   #
-  INF Silicon/NXP/iMX6Pkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe.inf
-  INF MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf
+  #INF Silicon/NXP/iMX6Pkg/Drivers/PlatformSmbiosDxe/PlatformSmbiosDxe.inf
+  #INF MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf
+
+  # FPDT
+  #Enable ReportStatusCodeRouterRuntimeDxe &  FirmwarePerformanceDxe for UEFI Performance
+  ##perfINF MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf
+  ##perfINF MdeModulePkg/Universal/Acpi/FirmwarePerformanceDataTableDxe/FirmwarePerformanceDxe.inf
+  
+  # DP shell command Support
+  #Enable DpApp to visualize UEFI Performance
+  ##perfINF ShellPkg/DynamicCommand/DpDynamicCommand/DpApp.inf
 
 !include Silicon/NXP/iMX6Pkg/iMX6CommonFdf.inc
